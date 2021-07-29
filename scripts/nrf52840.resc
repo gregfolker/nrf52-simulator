@@ -5,7 +5,7 @@ using sysbus
 
 $name?="nRF52"
 mach create $name
-machine LoadPlatformDescription @platforms/cpus/nrf52840.repl
+machine LoadPlatformDescription $ORIGIN/../platform/nrf52840.repl
 
 $bin?=@https://dl.antmicro.com/projects/renode/renode-nrf52840-zephyr_shell_module.elf-gf8d05cf-s_1310072-c00fbffd6b65c6238877c4fe52e8228c2a38bf1f
 

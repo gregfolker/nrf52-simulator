@@ -1,0 +1,63 @@
+nvic: IRQControllers.NVIC @ sysbus 0xE000E000
+    -> cpu@0
+
+cpu: CPU.CortexM @ sysbus
+    cpuType: "cortex-m4"
+    nvic: nvic
+
+uart0: UART.NRF52840_UART @ sysbus 0x40002000
+    easyDMA: true
+    -> nvic@2
+
+uart1: UART.NRF52840_UART @ sysbus 0x40028000
+    easyDMA: true
+    -> nvic@40
+
+rtc0: Timers.NRF52840_RTC @ sysbus 0x4000B000
+    -> nvic@11
+
+rtc1: Timers.NRF52840_RTC @ sysbus 0x40011000
+    -> nvic@17
+
+rtc2: Timers.NRF52840_RTC @ sysbus 0x40024000
+    -> nvic@36
+
+flash: Memory.MappedMemory @ sysbus 0x0
+    size: 0x20000000
+
+sram: Memory.MappedMemory @ sysbus 0x20000000
+    size: 0x20000000
+
+ram: Memory.MappedMemory @ sysbus 0x60000000
+    size: 0x40000000
+
+clock: Miscellaneous.NRF52840_CLOCK @ sysbus 0x40000000
+    -> nvic@0
+
+twi0: I2C.NRF52840_I2C @ sysbus 0x40003000
+    -> nvic@0x3
+
+spi2: SPI.NRF52840_SPI @ sysbus 0x40023000
+    -> nvic@0x23
+
+gpio0: GPIOPort.NRF52840_GPIO @ sysbus 0x50000000
+
+gpiote: GPIOPort.NRF52840_GPIOTasksEvents @ sysbus 0x40006000
+    port0: gpio0
+    -> nvic@6
+
+twi1: I2C.NRF52840_I2C @ sysbus 0x40004000
+    -> nvic@4
+
+timer1: Timers.NRF52840_Timer @ sysbus 0x40009000
+    -> nvic@9
+
+i2s: Sound.NRF52840_I2S @ sysbus 0x40025000
+    -> nvic@37
+
+pdm: Sound.NRF52840_PDM @ sysbus 0x4001D000
+    -> nvic@29
+
+sysbus:
+    init:
+        ApplySVD @https://dl.antmicro.com/projects/renode/svd/NRF52840.svd.gz

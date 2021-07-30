@@ -3,7 +3,7 @@
 
 using sysbus
 
-$name?="nRF52"
+$name?="nRF52840"
 mach create $name
 machine LoadPlatformDescription $ORIGIN/../platform/nrf52840.repl
 

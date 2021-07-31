@@ -57,10 +57,10 @@ Start the emulation
 (nRF52840) start
 ```
 
-```
-
 ## Resources
 
 [Renode Documentation](https://renode.readthedocs.io/en/latest/index.html)
+
 [nRF52840 Product Specification](https://infocenter.nordicsemi.com/topic/struct_nrf52/struct/nrf52840.html?cp=4_0)
+
 [Nordic nRF5 SDK](https://www.nordicsemi.com/Products/Development-software/nRF5-SDK/Download#infotabs)

@@ -45,6 +45,8 @@ console that displays the output of uart0
 $ renode scripts/nrf52840.resc
 ```
 
+![Renode CLI and UART Console](../images/renode-example.png)
+
 From the Renode CLI, load the pre-compiled example binary you wish to run into flash
 
 ```
@@ -56,6 +58,8 @@ Start the emulation
 ```
 (nRF52840) start
 ```
+
+!['Hello World' Example Output](../images/renode-example2.png)
 
 ## Resources
 
